@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.monkey {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #8B4513; /* Brown color for the face */
+    border-radius: 100px; /* Make it circular */
+    margin-bottom: 20px;
+}
+
+.ear {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: #8B4513; /* Brown color for the ears */
+    border-radius: 50%;
+}
+
+.left-ear {
+    left: -40px; /* Position the left ear */
+    top: 30px;
+}
+
+.right-ear {
+    right: -40px; /* Position the right ear */
+    top: 30px;
+}
+
+.face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.eye {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #fff; /* White for the eyes */
+    border-radius: 50%;
+    top: 50px;
+    transition: transform 0.3s; /* Animation for eye opening */
+}
+
+.left-eye {
+    left: 50px; /* Position the left eye */
+}
+
+.right-eye {
+    right: 50px; /* Position the right eye */
+}
+
+.nose {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background-color: #000; /* Black for the nose */
+    border-radius: 15px; /* Rounded nose */
+    top: 80px;
+    left: 85px; /* Center the nose */
+}
+
+.mouth {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    background-color: #000; /* Black for the mouth */
+    border-radius: 30px; /* Rounded mouth */
+    top: 110px;
+    left: 70px; /* Center the mouth */
+}
+
+.eye.closed {
+    transform: scaleY(0); /* Close the eye */
+}
+
+.eye.open {
+    transform: scaleY(1); /* Open the eye */
+}
+
+.hand {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    background-color: #FFD700; /* Gold color for the hands */
+    border-radius: 10px;
+    top: 50px; /* Position hands near the eyes */
+    transition: transform 0.3s; /* Animation for hand movement */
+}
+
+.left-hand {
+    left: 20px; /* Position the left hand */
+    transform: rotate(30deg); /* Slight rotation */
+}
+
+.right-hand {
+    right: 20px; /* Position the right hand */
+    transform: rotate(-30deg); /* Slight rotation */
+}
+
+input[type="email"], input[type="password"] {
+    padding: 10px ;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
