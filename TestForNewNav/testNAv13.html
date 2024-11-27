@@ -15,6 +15,7 @@
             border: none;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             animation: dropdownFade 0.3s ease;
+            display: none; /* Initially hidden */
         }
 
         @keyframes dropdownFade {
@@ -34,7 +35,6 @@
         }
 
         .navbar-13 .dropdown-menu {
-            display: flex;
             padding: 15px;
         }
 
@@ -65,10 +65,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="newArrivalsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="newArrivalsDropdown" role="button" aria-expanded="false">
                             New Arrivals
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="newArrivalsDropdown">
+                        <div class="dropdown-menu" aria-labelledby="newArrivalsDropdown" id="dropdownMenu">
                             <div class="dropdown-img-section">
                                 <img src="https://via.placeholder.com/200x250" alt="New Arrivals">
                             </div>
@@ -88,5 +88,22 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     
+    <script>
+        // JavaScript to toggle the display of the dropdown menu
+        const newArrivalsDropdown = document.getElementById('newArrivalsDropdown');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        newArrivalsDropdown.addEventListener('click', function(event) {
+            // Prevent default action (if any)
+            event.preventDefault();
+            
+            // Toggle the display property of the dropdown menu
+            if (dropdownMenu.style.display === 'flex') {
+                dropdownMenu.style.display = 'none';
+            } else {
+                dropdownMenu.style.display = 'flex';
+            }
+        });
+    </script>
 </body>
 </html>
