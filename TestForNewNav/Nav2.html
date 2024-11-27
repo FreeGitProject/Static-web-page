@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional E-commerce Navbar Designs</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom Navbar Styles */
+        .navbar-6 {
+            background-color: #2c3e50;
+            transition: all 0.3s ease;
+        }
+        .navbar-7 {
+            background-color: #f4f4f4;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .navbar-8 {
+            background: linear-gradient(to right, #3494e6, #ec6ead);
+        }
+        .navbar-9 {
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+        }
+        .navbar-10 {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Hover and Interaction Effects */
+        .navbar .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+        }
+        .navbar .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Search and Cart Styling */
+        .custom-search {
+            border-radius: 20px;
+            padding-left: 20px;
+        }
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar 6: Tech-Inspired Dark Navbar -->
+    <nav class="navbar navbar-6 navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-cube me-2"></i>TechStore
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav6">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav6">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Electronics</a></li>
+                            <li><a class="dropdown-item" href="#">Computers</a></li>
+                            <li><a class="dropdown-item" href="#">Accessories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Arrivals</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <form class="d-flex me-3">
+                        <input class="form-control custom-search me-2" type="search" placeholder="Search products">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                    <a href="#" class="btn btn-outline-light position-relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">4</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar 7: Minimalist Light Professional Navbar -->
+    <nav class="navbar navbar-7 navbar-expand-lg navbar-light mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <strong>ProShop</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav7">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav7">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-primary me-2">
+                        <i class="fas fa-user me-2"></i>Account
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart me-2"></i>Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar 8: Pastel Gradient Navbar -->
+    <nav class="navbar navbar-8 navbar-expand-lg navbar-dark mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-palette me-2"></i>StyleHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav8">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav8">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Women</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Men</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kids</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Accessories</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-light me-2">
+                        <i class="fas fa-heart me-2"></i>Wishlist
+                    </a>
+                    <a href="#" class="btn btn-outline-light">
+                        <i class="fas fa-shopping-cart me-2"></i>Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar 9: Dark Cyberpunk-Inspired Navbar -->
+    <nav class="navbar navbar-9 navbar-expand-lg navbar-dark mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-network-wired me-2"></i>CyberMarket
+            </a>
+            <div class="d-flex align-items-center">
+                <form class="d-flex me-3">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <a href="#" class="btn btn-outline-light position-relative me-2">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">2</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav9">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav9">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Electronics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gadgets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Accessories</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar 10: Clean Minimal White Navbar -->
+    <nav class="navbar navbar-10 navbar-expand-lg navbar-light mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/api/placeholder/120/40" alt="Logo" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav10">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav10">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Shop
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+                            <li><a class="dropdown-item" href="#">Best Sellers</a></li>
+                            <li><a class="dropdown-item" href="#">Sale</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Brands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Collections</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-primary me-2">
+                        <i class="fas fa-user me-2"></i>Login
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart me-2"></i>Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bootstrap 5.3 JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced E-commerce Navbar with Styled Dropdowns</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global Dropdown Styles */
+        .dropdown-menu {
+            margin-top: 10px;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            animation: dropdownFade 0.3s ease;
+        }
+        @keyframes dropdownFade {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Navbar 11: Modern Mega Dropdown */
+        .navbar-11 {
+            background-color: #2c3e50;
+        }
+        .navbar-11 .mega-dropdown {
+            position: static;
+        }
+        .navbar-11 .mega-dropdown-menu {
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .navbar-11 .dropdown-category {
+            margin-bottom: 15px;
+        }
+        .navbar-11 .dropdown-category h6 {
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .navbar-11 .dropdown-category a {
+            color: #34495e;
+            padding: 5px 0;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        .navbar-11 .dropdown-category a:hover {
+            color: #3498db;
+        }
+
+        /* Navbar 12: Elegant Sidebar-like Dropdown */
+        .navbar-12 {
+            background-color: #f8f9fa;
+        }
+        .navbar-12 .dropdown-menu {
+            border-left: 3px solid #007bff;
+            min-width: 250px;
+        }
+        .navbar-12 .dropdown-item {
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .navbar-12 .dropdown-item i {
+            margin-right: 10px;
+            color: #007bff;
+        }
+        .navbar-12 .dropdown-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        /* Navbar 13: Creative Image Dropdown */
+        .navbar-13 {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+        .navbar-13 .dropdown-menu {
+            display: flex;
+            padding: 15px;
+            
+        }
+        .navbar-13 .dropdown-img-section {
+            width: 200px;
+            margin-right: 20px;
+        }
+        .navbar-13 .dropdown-img-section img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .navbar-13 .dropdown-text-section {
+            flex-grow: 1;
+        }
+
+        /* Navbar 14: Minimal Dark Dropdown */
+        .navbar-14 {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .navbar-14 .dropdown-menu {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+        .navbar-14 .dropdown-item {
+            color: #b0b0b0;
+            transition: all 0.3s ease;
+        }
+        .navbar-14 .dropdown-item:hover {
+            background-color: #2a2a2a;
+            color: #ffffff;
+        }
+
+        /* Navbar 15: Animated Highlight Dropdown */
+        .navbar-15 {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar-15 .dropdown-menu {
+            border-top: 3px solid #ff6b6b;
+        }
+        .navbar-15 .dropdown-item {
+            position: relative;
+            overflow: hidden;
+        }
+        .navbar-15 .dropdown-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background-color: #ff6b6b;
+            transition: left 0.3s ease;
+        }
+        .navbar-15 .dropdown-item:hover::after {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar 11: Modern Mega Dropdown -->
+    <nav class="navbar navbar-11 navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MegaStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav11">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav11">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Categories
+                        </a>
+                        <div class="dropdown-menu mega-dropdown-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 dropdown-category">
+                                        <h6>Electronics</h6>
+                                        <a href="#">Smartphones</a>
+                                        <a href="#">Laptops</a>
+                                        <a href="#">Tablets</a>
+                                    </div>
+                                    <div class="col-md-3 dropdown-category">
+                                        <h6>Fashion</h6>
+                                        <a href="#">Men's Wear</a>
+                                        <a href="#">Women's Wear</a>
+                                        <a href="#">Accessories</a>
+                                    </div>
+                                    <div class="col-md-3 dropdown-category">
+                                        <h6>Home & Living</h6>
+                                        <a href="#">Furniture</a>
+                                        <a href="#">Decor</a>
+                                        <a href="#">Kitchen</a>
+                                    </div>
+                                    <div class="col-md-3 dropdown-category">
+                                        <h6>Sports</h6>
+                                        <a href="#">Fitness</a>
+                                        <a href="#">Outdoor</a>
+                                        <a href="#">Team Sports</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar 12: Elegant Sidebar-like Dropdown -->
+    <nav class="navbar navbar-12 navbar-expand-lg navbar-light mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ElegantShop</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Product Lines
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-mobile-alt"></i> Mobile Phones
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-laptop"></i> Computers
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-headphones"></i> Accessories
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar 13: Creative Image Dropdown -->
+    <nav class="navbar navbar-13 navbar-expand-lg navbar-dark mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CreativeStore</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            New Arrivals
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-img-section">
+                                <img src="/api/placeholder/200/250" alt="New Arrivals">
+                            </div>
+                            <div class="dropdown-text-section">
+                                <h5>Summer Collection 2024</h5>
+                                <p>Explore our latest trending items and fashion statements.</p>
+                                <a href="#" class="btn btn-primary">Shop Now</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar 14: Minimal Dark Dropdown -->
+    <nav class="navbar navbar-14 navbar-expand-lg navbar-dark mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">DarkMode Shop</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Collections
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Minimalist</a>
+                            <a class="dropdown-item" href="#">Classic</a>
+                            <a class="dropdown-item" href="#">Modern</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">All Collections</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar 15: Animated Highlight Dropdown -->
+    <nav class="navbar navbar-15 navbar-expand-lg navbar-light mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TrendSpot</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Departments
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Women's Fashion</a>
+                            <a class="dropdown-item" href="#">Men's Fashion</a>
+                            <a class="dropdown-item" href="#">Kids' Wear</a>
+                            <a class="dropdown-item" href="#">Accessories</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bootstrap 5.3 JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

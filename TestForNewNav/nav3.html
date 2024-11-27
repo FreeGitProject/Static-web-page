@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced E-commerce Navbar Designs</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Advanced Dropdown Styles */
+        .mega-dropdown {
+            position: static;
+        }
+        .mega-dropdown-menu {
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .mega-dropdown-column {
+            border-right: 1px solid #e9ecef;
+            padding: 0 15px;
+        }
+        .mega-dropdown-column:last-child {
+            border-right: none;
+        }
+        .dropdown-header {
+            font-weight: bold;
+            color: #343a40;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .dropdown-item {
+            transition: all 0.3s ease;
+        }
+        .dropdown-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        /* Navbar-Specific Styles */
+        .navbar-11 {
+            background-color: #2c3e50;
+        }
+        .navbar-12 {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+        }
+        .navbar-13 {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar-14 {
+            background-color: #1a1a2e;
+        }
+        .navbar-15 {
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* Hover and Interaction Effects */
+        .navbar .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+        }
+        .navbar .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .mega-dropdown-menu {
+                position: static;
+                display: block;
+                width: 100%;
+            }
+            .mega-dropdown-column {
+                border-right: none;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar 11: Dark Corporate Mega Dropdown -->
+    <nav class="navbar navbar-11 navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-store me-2"></i>GlobalStore
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav11">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav11">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Product Categories
+                        </a>
+                        <div class="dropdown-menu mega-dropdown-menu row">
+                            <div class="col-md-3 mega-dropdown-column">
+                                <h6 class="dropdown-header">Electronics</h6>
+                                <div class="dropdown-item">Smartphones</div>
+                                <div class="dropdown-item">Laptops</div>
+                                <div class="dropdown-item">Tablets</div>
+                                <div class="dropdown-item">Accessories</div>
+                            </div>
+                            <div class="col-md-3 mega-dropdown-column">
+                                <h6 class="dropdown-header">Fashion</h6>
+                                <div class="dropdown-item">Men's Wear</div>
+                                <div class="dropdown-item">Women's Wear</div>
+                                <div class="dropdown-item">Kids' Wear</div>
+                                <div class="dropdown-item">Accessories</div>
+                            </div>
+                            <div class="col-md-3 mega-dropdown-column">
+                                <h6 class="dropdown-header">Home & Living</h6>
+                                <div class="dropdown-item">Furniture</div>
+                                <div class="dropdown-item">Decor</div>
+                                <div class="dropdown-item">Kitchen</div>
+                                <div class="dropdown-item">Lighting</div>
+                            </div>
+                            <div class="col-md-3 mega-dropdown-column">
+                                <h6 class="dropdown-header">Trending</h6>
+                                <div class="dropdown-item">New Arrivals</div>
+                                <div class="dropdown-item">Best Sellers</div>
+                                <div class="dropdown-item">Sale Items</div>
+                                <div class="dropdown-item">Clearance</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Arrivals</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-light me-2">
+                        <i class="fas fa-user me-2"></i>Account
+                    </a>
+                    <a href="#" class="btn btn-light">
+                        <i class="fas fa-shopping-cart me-2"></i>Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar 12: Gradient Dropdown with Icons -->
+    <nav class="navbar navbar-12 navbar-expand-lg navbar-dark mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shopping-bag me-2"></i>StylePro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav12">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav12">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <i class="fas fa-tshirt me-2"></i>Fashion
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-male me-2"></i>Men's Wear
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-female me-2"></i>Women's Wear
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-child me-2"></i>Kids' Wear
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <i class="fas fa-desktop me-2"></i>Electronics
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-mobile-alt me-2"></i>Smartphones
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-laptop me-2"></i>Computers
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Deals</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-light me-2">
+                        <i class="fas fa-heart me-2"></i>Wishlist
+                    </a>
+                    <a href="#" class="btn btn-light">
+                        <i class="fas fa-shopping-cart me-2"></i>Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar 13: Clean White Dropdown with Images -->
+    <nav class="navbar navbar-13 navbar-expand-lg navbar-light mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/api/placeholder/120/40" alt="Logo" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav13">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav13">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Collections
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="row p-3">
+                                <div class="col-md-4">
+                                    <a href="#" class="dropdown-item">
+                                        <img src="/api/placeholder/200/150" alt="Summer Collection" class="img-fluid mb-2">
+                                        Summer Collection
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="#" class="dropdown-item">
+                                        <img src="/api/placeholder/200/150" alt="Winter Wear" class="img-fluid mb-2">
+                                        Winter Wear
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="#" class="dropdown-item">
+                                        <img src="/api/placeholder/200/150" alt="Accessories" class="img-fluid mb-2">
+                                        Accessories
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sale</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Arrivals</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-primary me-2">
+                        <i class="fas fa-user me-2"></i>Login
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart me-2"></i>Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar 14: Dark Tech Dropdown with Descriptions -->
+    
+</body>
+</html>
