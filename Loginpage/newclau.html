@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐒 Banana Republic Login 🍌</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+        body {
+            font-family: 'Bangers', cursive;
+            background: linear-gradient(45deg, #FFF7E0, #FFE4B5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            transform: rotateX(10deg);
+            transition: all 0.3s ease;
+        }
+
+        .monkey {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            background-color: #8B4513;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            overflow: hidden;
+        }
+
+        .ear {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #5D3A1A;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .left-ear {
+            left: -40px;
+            top: 40px;
+            transform: rotate(-20deg);
+        }
+
+        .right-ear {
+            right: -40px;
+            top: 40px;
+            transform: rotate(20deg);
+        }
+
+        .eye {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            border: 3px solid #333;
+            top: 70px;
+            transition: all 0.3s ease;
+        }
+
+        .left-eye {
+            left: 60px;
+        }
+
+        .right-eye {
+            right: 60px;
+        }
+
+        .hand {
+            position: absolute;
+            width: 70px;
+            height: 30px;
+            background-color: #FFD700;
+            border-radius: 15px;
+            bottom: 60px;
+            transition: all 0.3s ease;
+        }
+
+        .left-hand {
+            left: 40px;
+            transform: rotate(15deg);
+        }
+
+        .right-hand {
+            right: 40px;
+            transform: rotate(-15deg);
+        }
+
+        .hands-covering-eyes .left-hand,
+        .hands-covering-eyes .right-hand {
+            top: 70px;
+            bottom: auto;
+            width: 50px;
+            height: 40px;
+            background-color: #FFA500;
+        }
+
+        .hands-covering-eyes .left-hand {
+            left: 50px;
+            transform: rotate(-90deg);
+        }
+
+        .hands-covering-eyes .right-hand {
+            right: 50px;
+            transform: rotate(90deg);
+        }
+
+        .nose {
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            background-color: #FF6347;
+            border-radius: 50%;
+            top: 110px;
+            left: 100px;
+        }
+
+        .mouth {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            border-bottom: 5px solid black;
+            border-radius: 50%;
+            bottom: 30px;
+            left: 75px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input {
+            padding: 12px;
+            border: 2px solid #FFA500;
+            border-radius: 10px;
+            font-family: 'Bangers', cursive;
+            font-size: 18px;
+        }
+
+        .password-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Bangers', cursive;
+            font-size: 22px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FF8C00;
+            transform: scale(1.05);
+        }
+
+        .banana-hint {
+            color: #8B4513;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="monkey" id="monkey">
+            <div class="ear left-ear"></div>
+            <div class="ear right-ear"></div>
+            <div class="eye left-eye"></div>
+            <div class="eye right-eye"></div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+            <div class="hand left-hand"></div>
+            <div class="hand right-hand"></div>
+        </div>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="🐒 Banana Mail" required>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="🍌 Secret Banana Code" required>
+                <label>
+                    <input type="checkbox" id="show-password">
+                    👀
+                </label>
+            </div>
+            <button type="submit">Swing Into Action!</button>
+            <div class="banana-hint">Hint: Monkeys love strong passwords!</div>
+        </form>
+    </div>
+
+    <script>
+        const monkey = document.getElementById('monkey');
+        const passwordInput = document.getElementById('password');
+        const showPasswordCheckbox = document.getElementById('show-password');
+
+        passwordInput.addEventListener('input', () => {
+            if (passwordInput.value.length > 0) {
+                monkey.classList.add('hands-covering-eyes');
+            } else {
+                monkey.classList.remove('hands-covering-eyes');
+            }
+        });
+
+        showPasswordCheckbox.addEventListener('change', () => {
+            passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
+            
+            if (showPasswordCheckbox.checked) {
+                monkey.classList.remove('hands-covering-eyes');
+            } else if (passwordInput.value.length > 0) {
+                monkey.classList.add('hands-covering-eyes');
+            }
+        });
+
+        // Reset hands when password is empty
+        passwordInput.addEventListener('blur', () => {
+            if (passwordInput.value.length === 0) {
+                monkey.classList.remove('hands-covering-eyes');
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('🍌 Banana Access Granted! Welcome to the Jungle! 🐒');
+        });
+    </script>
+</body>
+</html>

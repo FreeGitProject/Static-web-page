@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐒 Banana Republic Login 🍌</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+        body {
+            font-family: 'Bangers', cursive;
+            background: linear-gradient(45deg, #FFF7E0, #FFE4B5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            transform: rotateX(10deg);
+            transition: all 0.3s ease;
+        }
+
+        .monkey {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            background-color: #8B4513;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            overflow: hidden;
+            animation: monkeyBreath 3s infinite;
+        }
+
+        @keyframes monkeyBreath {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .ear {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #5D3A1A;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .left-ear {
+            left: -40px;
+            top: 40px;
+            transform: rotate(-20deg);
+        }
+
+        .right-ear {
+            right: -40px;
+            top: 40px;
+            transform: rotate(20deg);
+        }
+
+        .eye {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            border: 3px solid #333;
+            top: 70px;
+            transition: all 0.3s ease;
+        }
+
+        .left-eye {
+            left: 60px;
+        }
+
+        .right-eye {
+            right: 60px;
+        }
+
+        .pupil {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: black;
+            border-radius: 50%;
+            top: 12px;
+            left: 12px;
+        }
+
+        .nose {
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            background-color: #FF6347;
+            border-radius: 50%;
+            top: 110px;
+            left: 100px;
+        }
+
+        .mouth {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            border-bottom: 5px solid black;
+            border-radius: 50%;
+            bottom: 30px;
+            left: 75px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input {
+            padding: 12px;
+            border: 2px solid #FFA500;
+            border-radius: 10px;
+            font-family: 'Bangers', cursive;
+            font-size: 18px;
+        }
+
+        button {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Bangers', cursive;
+            font-size: 22px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FF8C00;
+            transform: scale(1.05);
+        }
+
+        .banana-hint {
+            color: #8B4513;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="monkey">
+            <div class="ear left-ear"></div>
+            <div class="ear right-ear"></div>
+            <div class="eye left-eye">
+                <div class="pupil"></div>
+            </div>
+            <div class="eye right-eye">
+                <div class="pupil"></div>
+            </div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+        </div>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="🐒 Banana Mail" required>
+            <input type="password" id="password" placeholder="🍌 Secret Banana Code" required>
+            <button type="submit">Swing Into Action!</button>
+            <div class="banana-hint">Hint: Monkeys love strong passwords!</div>
+        </form>
+    </div>
+
+    <script>
+        const eyes = document.querySelectorAll('.eye');
+        const pupils = document.querySelectorAll('.pupil');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+
+        emailInput.addEventListener('focus', () => {
+            eyes.forEach(eye => eye.style.transform = 'scale(1.2)');
+            pupils.forEach(pupil => pupil.style.backgroundColor = 'green');
+        });
+
+        passwordInput.addEventListener('focus', () => {
+            eyes.forEach(eye => eye.style.transform = 'scale(0.8)');
+            pupils.forEach(pupil => pupil.style.backgroundColor = 'red');
+        });
+
+        emailInput.addEventListener('blur', resetEyes);
+        passwordInput.addEventListener('blur', resetEyes);
+
+        function resetEyes() {
+            eyes.forEach(eye => eye.style.transform = 'scale(1)');
+            pupils.forEach(pupil => pupil.style.backgroundColor = 'black');
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('🍌 Banana Access Granted! Welcome to the Jungle! 🐒');
+        });
+    </script>
+</body>
+</html>
