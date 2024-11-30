@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monkey Business Login</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: #f0e68c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: linear-gradient(to bottom right, #87CEEB, #90EE90);
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            padding: 30px;
+            text-align: center;
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .monkey-image {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .monkey-image:hover {
+            transform: scale(1.05);
+        }
+
+        .input-group {
+            width: 100%;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #FFA500;
+        }
+
+        .password-toggle {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .login-btn {
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #FF4500;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .monkey-joke {
+            margin-top: 15px;
+            color: #696969;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img id="monkeyImage" src="https://raw.githubusercontent.com/Anthropic/simulated-assets/main/monkey-normal.png" alt="Monkey" class="monkey-image">
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" placeholder="Username" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="passwordInput" placeholder="Password" required>
+            </div>
+            
+            <div class="password-toggle">
+                <input type="checkbox" id="showPassword">
+                <label for="showPassword">Show Password</label>
+            </div>
+            
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        
+        <div class="monkey-joke">
+            Why did the monkey like the website? 
+            Because it was full of banana-web features! 🍌
+        </div>
+    </div>
+
+    <script>
+        const monkeyImage = document.getElementById('monkeyImage');
+        const passwordInput = document.getElementById('passwordInput');
+        const showPasswordCheckbox = document.getElementById('showPassword');
+
+        passwordInput.addEventListener('input', () => {
+            if (passwordInput.value.length > 0) {
+                monkeyImage.src = 'https://raw.githubusercontent.com/Anthropic/simulated-assets/main/monkey-covering-eyes.png';
+            } else {
+                monkeyImage.src = 'https://raw.githubusercontent.com/Anthropic/simulated-assets/main/monkey-normal.png';
+            }
+        });
+
+        showPasswordCheckbox.addEventListener('change', () => {
+            passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
+            
+            if (showPasswordCheckbox.checked) {
+                monkeyImage.src = 'https://raw.githubusercontent.com/Anthropic/simulated-assets/main/monkey-one-eye.png';
+            } else {
+                monkeyImage.src = passwordInput.value.length > 0 
+                    ? 'https://raw.githubusercontent.com/Anthropic/simulated-assets/main/monkey-covering-eyes.png'
+                    : 'https://raw.githubusercontent.com/Anthropic/simulated-assets/main/monkey-normal.png';
+            }
+        });
+    </script>
+</body>
+</html>
